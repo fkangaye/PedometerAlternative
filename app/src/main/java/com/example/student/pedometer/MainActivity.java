@@ -70,12 +70,11 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         double mLastX = 0.0;
         double mLastY = 0.0;
         double mLastZ = 0.0;
-        // event object contains values of acceleration, read those
         double x;
         double y;
         double z;
 
-        final double alpha = 0.8; // constant for our filter below
+        final double alpha = 0.8;
 
         double[] gravity = {0, 0, 0};
 
@@ -84,7 +83,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         gravity[1] = alpha * gravity[1] + (1 - alpha) * event.values[1];
         gravity[2] = alpha * gravity[2] + (1 - alpha) * event.values[2];
 
-// Remove the gravity contribution with the high-pass filter.
+        // Remove the gravity contribution with the high-pass filter.
         x = event.values[0] - gravity[0];
         y = event.values[1] - gravity[1];
         z = event.values[2] - gravity[2];
@@ -131,14 +130,6 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                    textView.setText(getText(stepsCount));
                 }
 
-// Just for indication purpose, I have added vibrate function
-//                // whenever our count moves past multiple of 10
-//                if ((stepsCount % 10) == 0) {
-//                    Util.Vibrate(this, 100);
-//                }
-//            } else {
-//                // no shake detected
-//            }
             }
         }
     }
@@ -151,7 +142,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     @Override
     protected void onResume() {
         super.onResume();
-        mSensorManager.registerListener((SensorEventListener) this, mAccelerometer, SensorManager.SENSOR_DELAY_NORMAL);
+        mSensorManager.registerListener(this, mAccelerometer, SensorManager.SENSOR_DELAY_NORMAL);
     }
 
 
