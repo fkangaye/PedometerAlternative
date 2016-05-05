@@ -1,0 +1,45 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ff000000"
+    tools:context="com.example.student.pedometer.stepFragment">
+
+    <TextView
+        android:id="@+id/txtCount"
+        style="@style/AppTheme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:text="@string/txtCount" />
+
+    <TextView
+        android:id="@+id/textView1"
+        style="@style/AppTheme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtCount"
+        android:layout_centerHorizontal="true"
+        android:text="@string/txtSteps" />
+
+    <Button
+        android:id="@+id/btnStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/txtCount"
+        android:layout_alignRight="@+id/txtCount"
+        android:layout_below="@+id/textView1"
+        android:layout_marginTop="34dp"
+        android:text="@string/strStop" />
+
+    <Button
+        android:id="@+id/btnReset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/btnStart"
+        android:layout_alignRight="@+id/btnStart"
+        android:layout_below="@+id/btnStart"
+        android:text="@string/reset" />
+
+</RelativeLayout>

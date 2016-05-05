@@ -1,0 +1,49 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 1189816 bytes for Chunk::new
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   In 32 bit mode, the process size limit was hit
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Use 64 bit Java on a 64 bit OS
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (allocation.cpp:326), pid=15663, tid=1731607360
+#
+# JRE version: OpenJDK Runtime Environment (7.0_91-b02) (build 1.7.0_91-b02)
+# Java VM: OpenJDK Server VM (24.91-b01 mixed mode linux-x86 )
+# Derivative: IcedTea 2.6.3
+# Distribution: Ubuntu 15.04, package 7u91-2.6.3-0ubuntu0.15.04.1
+# Failed to write core dump. Core dumps have been disabled. To enable core dumping, try "ulimit -c unlimited" before starting Java again
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x679eb400):  JavaThread "C2 CompilerThread0" daemon [_thread_in_native, id=15708, stack(0x672e3000,0x67364000)]
+
+Stack: [0x672e3000,0x67364000]
+
+Current CompileTask:
+C2:  11946  241             com.android.dx.ssa.SCCP::run (298 bytes)
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x67071000 JavaThread "pool-1-thread-4" [_thread_in_vm, id=15737, stack(0x66951000,0x669a2000)]
+  0x6706fc00 JavaThread "pool-1-thread-3" [_thread_in_vm, id=15736, stack(0x669a2000,0x669f3000)]
+  0x6706e800 JavaThread "pool-1-thread-2" [_thread_in_Java, id=15735, stack(0x669f3000,0x66a44000)]
+  0x67062400 JavaThread "pool-2-thread-1" [_thread_blocked, id=15734, stack(0x66a44000,0x66a95000)]
+  0x67060000 JavaThread "pool-1-thread-1" [_thread_in_Java, id=15733, stack(0x66a95000,0x66ae6000)]
+  0x679ee800 JavaThread "Service Thread" daemon [_thread_blocked, id=15714, stack(0x67211000,0x67262000)]
+  0x679ec800 JavaThread "C2 CompilerThread1" daemon [_thread_in_native, id=15713, stack(0x67262000,0x672e3000)]
+=>0x679eb400 JavaThread "C2 CompilerThread0" daemon [_thread_in_native, id=15708, stack(0x672e3000,0x67364000)]
+  0x67998400 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=15701, stack(0x674af000,0x67500000)]
+  0x67985400 JavaThread "Finalizer" daemon [
